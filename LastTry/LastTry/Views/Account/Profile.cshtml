@@ -1,0 +1,67 @@
+﻿@model LastTry.Models.User;
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Личный кабинет</title>
+</head>
+<body class="text">
+<div>
+    <div class="oneLine center" >
+        <div style="margin: 20px">
+            <div class="cercle"></div>
+        </div>
+        <div style="margin: 20px">
+            <div class="profInfo">
+                @Model.Name
+            </div>
+            <div class="profInfo">
+                Группа
+            </div>
+            <div class="profInfo">
+                Специальность
+            </div>
+        </div>
+    </div>
+
+    <div style="font-size: 50px">
+        Меню:
+    </div>
+    
+    <div class="spaceAround">
+        <form action="/UserProfile/Timetable">
+            <button class="profButton">
+                <div class="profButtonText">
+                    расписание
+                </div>
+            </button>
+        </form>
+        <form action="/UserProfile/Vacancies">
+            <button class="profButton">
+                <div class="profButtonText">
+                    вакансии
+                </div>
+            </button>
+        </form>
+        <form action="/UserProfile/Dormitory">
+            <button class="profButton">
+                <div class="profButtonText">
+                    общежитие
+                </div>
+            </button>
+        </form>
+    </div>
+    
+    <div>
+        <form asp-action="Logout" asp-controller="Account" asp-antiforgery="true">
+            <button type="submit">Выйти</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

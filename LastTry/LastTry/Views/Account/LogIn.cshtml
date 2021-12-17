@@ -1,0 +1,38 @@
+﻿@model LastTry.Models.User;
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Вход</title>
+</head>
+<body class="text">
+<div>
+        <div class="center regMainMarg" style="font-size: 65px">
+            Личный кабинет
+        </div>
+        <form asp-action="Login" asp-controller="Account" asp-antiforgery="true">
+            <div class="center regMarg">
+                <input asp-for="Email" type="email" placeholder="Почта" class="regInput">
+            </div>
+            <div class="center regMarg">
+                <input asp-for="Password" type="password" placeholder="Пароль" class="regInput">
+            </div>
+            <div class="center regMarg">
+                <button onclick="window.location.href='/Account/Profile'" type="submit" class="regButton oneLine" style="margin: 0px">
+                    <div class="autorText text">
+                        Войти
+                    </div>
+                </button>
+            </div>
+            <div class="center">
+                <a href="/Account/Registration">Регистрация</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
